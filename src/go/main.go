@@ -28,11 +28,17 @@ func hello(p_writer http.ResponseWriter, p_request *http.Request) {
     var l_data_json Data
     json.Unmarshal(l_data_receive, &l_data_json)
 
+    l_response := process_hello(l_data_json)
+
+    json.NewEncoder(p_writer).Encode(l_response)
+}
+
+func process_hello(p_data Data) Data {
     var l_response Data
-    if l_data_json.Message == "hello" {
+    if p_data.Message == "hello" {
         l_response.Message = "hello you !"
     } else {
         l_response.Message = "hello?"
     }
-    json.NewEncoder(p_writer).Encode(l_response)
+    return l_response
 }
