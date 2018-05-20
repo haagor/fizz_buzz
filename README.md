@@ -35,7 +35,7 @@ ok  	github.com/fizz_buzz/src/go	0.002s
 
 ## Launch server
 
-run with Go :
+Run with Go :
 
 ```
 fizz_buzz/src/go$ go run fizz_buzz.go 
@@ -79,9 +79,9 @@ I use [dep](https://golang.github.io/dep/docs/daily-dep.html) to manage my depen
 
 ### Go bench
 `fizz_buzz/src/go$ go test -bench=. -benchtime=60s`
-I wanted to initialize a benchmark with Go. So I write another version of fizz_buzz. I named it with the keyword "naive" because I thinking it was less optimize. my first benchmark didn't confirm my intuition. My first benchmark didn't confirm my intuition. Indeed I believed reduce the amount of test but with a small `int1`, the naive version will leave the if statements offen at the second. My first version, in all case, will execuc all of its if statement.
+I wanted to initialize a benchmark with Go. So I write another version of fizz_buzz. I named it with the keyword "naive" because I thinking it was less optimize. My first benchmark didn't confirm my intuition. Indeed I believed reduce the amount of test but with a small `int1`, the naive version will leave the if statements offen at the second. My first version, in all case, will execuc all of its if statement.
 
-The other point could be the string concatenation. I tried with `bytes.Buffer` but the difference was not perceptible. This is something that I could more investigate in the future.
+The other point could be the string concatenation. I tried with `bytes.Buffer` but the difference was not perceptible. This is something that I could more investigate later.
 
 ```
 fizz_buzz/src/go$ go test -bench=. -benchtime=60s
