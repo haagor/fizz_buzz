@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "launch server :"
-go run go/main.go &
+go run go/fizz_buzz.go &
 sleep 2
 
 echo -e "\nrun curl :"
