@@ -33,7 +33,7 @@ ok  	github.com/fizz_buzz/src/go	0.002s
 
 ```
 
-## Launch server
+## Run server
 
 Run with Go :
 
