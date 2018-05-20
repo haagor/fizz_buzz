@@ -10,7 +10,6 @@
 - [x] hello REST
 - [x] init dep
 - [x] init test
-- [ ] go bench
-- [ ] goroutine optim?
+- [x] go bench
 - [ ] test API
 - [ ] detail README

@@ -44,21 +44,36 @@ func fizz_buzz(p_writer http.ResponseWriter, p_request *http.Request) {
 
 func process_fizz_buzz(p_fizz_buzz Params) Response {
     l_response := Response{Result: make([]string, p_fizz_buzz.Limit)}
-
-    for i := 1; i <= p_fizz_buzz.Limit; i++ {
+    for c_i := 1; c_i <= p_fizz_buzz.Limit; c_i++ {
         l_res := ""
-        if i % p_fizz_buzz.Int1 == 0 {
+        if c_i % p_fizz_buzz.Int1 == 0 {
             l_res += p_fizz_buzz.String1
         } 
-        if i % p_fizz_buzz.Int2 == 0 {
+        if c_i % p_fizz_buzz.Int2 == 0 {
             l_res += p_fizz_buzz.String2
         }
         if l_res == "" {
-            l_res = strconv.Itoa(i)
+            l_res = strconv.Itoa(c_i)
         }
-
-        l_response.Result[i-1] = l_res
+        l_response.Result[c_i-1] = l_res
     }
+    return l_response
+}
 
+func process_fizz_buzz_naive(p_fizz_buzz Params) Response {
+    l_response := Response{Result: make([]string, p_fizz_buzz.Limit)}
+    l_res := ""
+    for c_i := 1; c_i <= p_fizz_buzz.Limit; c_i++ {
+        if (c_i % (p_fizz_buzz.Int1 * p_fizz_buzz.Int2)) == 0 {
+            l_res = p_fizz_buzz.String1 + p_fizz_buzz.String2
+        } else if c_i % p_fizz_buzz.Int1 == 0 {
+            l_res = p_fizz_buzz.String1
+        } else if c_i % p_fizz_buzz.Int2 == 0 {
+            l_res = p_fizz_buzz.String2
+        } else {
+            l_res = strconv.Itoa(c_i)
+        }
+        l_response.Result[c_i-1] = l_res
+    }
     return l_response
 }
