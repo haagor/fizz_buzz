@@ -35,7 +35,9 @@ type Response struct {
 func fizz_buzz(p_writer http.ResponseWriter, p_request *http.Request) {
     l_params_receive,_ := ioutil.ReadAll(p_request.Body)
     var l_params_json Params
-    json.Unmarshal(l_params_receive, &l_params_json)
+    if err := json.Unmarshal(l_params_receive, &l_params_json); err != nil {
+        fmt.Println("error:", err)
+    }
 
     l_response := process_fizz_buzz(l_params_json)
 

@@ -11,5 +11,5 @@
 - [x] init dep
 - [x] init test
 - [x] go bench
-- [ ] test API
+- [x] scenario check API
 - [ ] detail README
