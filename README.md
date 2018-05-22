@@ -94,6 +94,9 @@ BenchmarkFizzBuzzNaive2-4   	 1000000	     70405 ns/op
 PASS
 ok  	github.com/fizz_buzz/src/go	462.988s
 ```
+## TODO
+
+**Huge mistake, it's not correct to expose POST API in my case. I have to switch with GET !**
 
 ## Authors
 
