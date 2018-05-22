@@ -14,7 +14,7 @@ import (
 
 func main() {
     l_router := mux.NewRouter()
-    l_router.HandleFunc("/fizz_buzz/v1", fizz_buzz).Methods("POST")
+    l_router.HandleFunc("/fizz_buzz/v1", fizz_buzz).Methods("GET")
     fmt.Println("listening...")
     log.Fatal(http.ListenAndServe(":8000", l_router))
 }
