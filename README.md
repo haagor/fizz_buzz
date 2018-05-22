@@ -57,7 +57,7 @@ listening...
 
 Here an example of command curl :
 
-`curl -H "Content-Type: application/json" -XPOST "http://localhost:8000/fizz_buzz/v1" -d '{"string1":"fizz","string2":"buzz","int1":3,"int2":5,"limit":15}'`
+`curl -H "Content-Type: application/json" -XGET "http://localhost:8000/fizz_buzz/v1" -d '{"string1":"fizz","string2":"buzz","int1":3,"int2":5,"limit":15}'`
 
 ### Naming convention
 My naming convention that I use is, if we take the variable "hello" for example :
